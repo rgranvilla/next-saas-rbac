@@ -6,7 +6,7 @@ import { redirect } from 'next/navigation'
 import { isAuthenticated } from '@/auth/auth'
 
 export const metadata: Metadata = {
-  title: 'Create Next App',
+  title: 'Saas Next 15rc com RBAC',
 }
 
 export default function AppLayout({
