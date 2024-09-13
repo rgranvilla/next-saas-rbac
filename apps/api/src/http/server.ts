@@ -121,6 +121,10 @@ app.register(getPendingInvites)
 app.register(getOrganizationBilling)
 
 app.listen({ port: env.PORT, host: '0.0.0.0' }).then(() => {
-  console.log(`Server is running on http://localhost:${env.PORT}`)
-  console.log(`Swagger is running on http://localhost:${env.PORT}/docs`)
+  console.log(
+    `Server is running on https://next-saas-rbac-wwon.onrender.com:${env.PORT}`,
+  )
+  console.log(
+    `Swagger is running on https://next-saas-rbac-wwon.onrender.com:${env.PORT}/docs`,
+  )
 })
