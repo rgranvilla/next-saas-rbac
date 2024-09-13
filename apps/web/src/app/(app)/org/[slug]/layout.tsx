@@ -8,7 +8,7 @@ import { PageWithHeaders } from '@/components/page-with-headers'
 import { Tabs } from '@/components/tabs'
 
 export const metadata: Metadata = {
-  title: 'Create Next App',
+  title: 'Saas Next 15rc com RBAC',
 }
 
 export default function OrgLayout({
