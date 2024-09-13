@@ -120,7 +120,7 @@ app.register(getPendingInvites)
 // Billings Routes
 app.register(getOrganizationBilling)
 
-app.listen({ port: env.PORT }).then(() => {
+app.listen({ port: env.PORT, host: '0.0.0.0' }).then(() => {
   console.log(`Server is running on http://localhost:${env.PORT}`)
   console.log(`Swagger is running on http://localhost:${env.PORT}/docs`)
 })
