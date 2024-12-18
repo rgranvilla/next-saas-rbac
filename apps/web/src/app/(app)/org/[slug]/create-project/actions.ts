@@ -25,10 +25,11 @@ export async function createProjectAction(data: FormData) {
   const { name, description } = result.data
 
   try {
+    const currentOrg = (await getCurrentOrg()) || ''
     await createProject({
       name,
       description,
-      orgSlug: getCurrentOrg()!,
+      orgSlug: currentOrg,
     })
   } catch (err) {
     if (err instanceof HTTPError) {

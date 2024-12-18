@@ -9,7 +9,7 @@ export function ShutdownOrganizationButton() {
   async function shutdownOrganizationAction() {
     'use server'
 
-    const currentOrg = getCurrentOrg()
+    const currentOrg = await getCurrentOrg()
 
     await shutdownOrganization({ org: currentOrg! })
 

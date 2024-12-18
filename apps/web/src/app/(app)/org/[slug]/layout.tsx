@@ -11,12 +11,13 @@ export const metadata: Metadata = {
   title: 'Saas Next 15rc com RBAC',
 }
 
-export default function OrgLayout({
+export default async function OrgLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  if (!isAuthenticated()) {
+  const checkAuth = await isAuthenticated()
+  if (!checkAuth) {
     redirect('/auth/sign-in')
   }
 

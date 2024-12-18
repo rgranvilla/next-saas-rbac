@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { ProjectList } from './project-list'
 
 export default async function Projects() {
-  const currentOrg = getCurrentOrg()
+  const currentOrg = await getCurrentOrg()
   const permissions = await ability()
 
   const canCreateProjects = permissions?.can('create', 'Project')
