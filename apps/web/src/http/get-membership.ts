@@ -12,9 +12,12 @@ export interface GetMembershipResponse {
 }
 
 export async function getMembership(slug: string) {
-  const result = await api
-    .get(`organizations/${slug}/membership`)
-    .json<GetMembershipResponse>()
-
-  return result
+  try {
+    const result = await api
+      .get(`organizations/${slug}/membership`)
+      .json<GetMembershipResponse>()
+    return result
+  } catch (error) {
+    return null
+  }
 }
