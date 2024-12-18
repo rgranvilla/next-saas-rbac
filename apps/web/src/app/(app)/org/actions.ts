@@ -21,7 +21,7 @@ const organizationSchema = z
           if (!value) return true
 
           const domainRegex =
-            /^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}$/
+            /^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.(?:[a-zA-Z]{2,}|[a-zA-Z]{2,}\.[a-zA-Z]{2,})$/
 
           return domainRegex.test(value)
         },
@@ -93,7 +93,7 @@ export async function createOrganizationAction(data: FormData) {
 }
 
 export async function updateOrganizationAction(data: FormData) {
-  const currentOrg = getCurrentOrg()
+  const currentOrg = await getCurrentOrg()
   const result = organizationSchema.safeParse(Object.fromEntries(data))
 
   if (!result.success) {
