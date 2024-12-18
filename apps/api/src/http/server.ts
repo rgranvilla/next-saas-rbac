@@ -120,9 +120,15 @@ app.register(getPendingInvites)
 // Billings Routes
 app.register(getOrganizationBilling)
 
-app.listen({ port: env.PORT, host: '0.0.0.0' }).then(() => {
-  console.log(`Server is running on ${env.NEXT_PUBLIC_API_URL}:${env.PORT}`)
-  console.log(
-    `Swagger is running on ${env.NEXT_PUBLIC_API_URL}:${env.PORT}/docs`,
-  )
-})
+app
+  .listen({ port: env.PORT, host: '0.0.0.0' })
+  .then(() => {
+    console.log(`Server is running on ${env.NEXT_PUBLIC_API_URL}:${env.PORT}`)
+    console.log(
+      `Swagger is running on ${env.NEXT_PUBLIC_API_URL}:${env.PORT}/docs`,
+    )
+  })
+  .catch((err) => {
+    console.error('Error starting server:', err)
+    process.exit(1)
+  })

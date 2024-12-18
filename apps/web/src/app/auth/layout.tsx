@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: 'Saas Next 15rc com RBAC',
 }
 
-export default function AuthLayout({
+export default async function AuthLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  if (isAuthenticated()) {
+  if (await isAuthenticated()) {
     redirect('/')
   }
 

@@ -24,15 +24,14 @@ export default async function InvitePage({ params }: InvitePageProps) {
   const inviteId = params.id
 
   const { invite } = await getInvite(inviteId)
-  const isUserAuthenticated = isAuthenticated()
+  const isUserAuthenticated = await isAuthenticated()
   const currentEmail = isUserAuthenticated ? (await auth()).user.email : null
   const userIsAuthenticatedWithSameEmailFromInvite =
     isUserAuthenticated && currentEmail === invite.email
 
   async function signInFormInvite() {
     'use server'
-
-    cookies().set('inviteId', inviteId)
+    ;(await cookies()).set('inviteId', inviteId)
 
     redirect(`/auth/sign-in?email=${invite.email}`)
   }
