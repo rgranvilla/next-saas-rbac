@@ -1,19 +1,15 @@
 'use client'
 
 import { AlertTriangle, Loader2 } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
-import githubIcon from '@/assets/icons/github.svg'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Separator } from '@/components/ui/separator'
 import { useFormState } from '@/hooks/use-form-state'
 
-import { signInWithGithub } from '../actions'
 import { signUpAction } from './actions'
 
 export function SignUpForm() {
@@ -94,13 +90,6 @@ export function SignUpForm() {
 
         <Button size="sm" variant="link" className="w-full" asChild>
           <Link href="/auth/sign-in">Already registered? Sign in</Link>
-        </Button>
-      </form>
-      <Separator />
-      <form action={signInWithGithub}>
-        <Button type="submit" className="w-full" variant="outline">
-          <Image src={githubIcon} alt="" className="mr-2 size-4 dark:invert" />
-          Sign up with Github
         </Button>
       </form>
     </div>
