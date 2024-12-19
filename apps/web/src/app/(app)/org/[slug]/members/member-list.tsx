@@ -16,8 +16,13 @@ import { UpdateMemberRoleSelect } from './update-member-role-select'
 export async function MemberList() {
   const currentOrg = await getCurrentOrg()
 
-  const [{ membership }, { members }, { organization }] = await Promise.all([
-    getMembership(currentOrg!),
+  const membershipResponse = await getMembership(currentOrg!)
+  if (!membershipResponse) {
+    throw new Error('Failed to retrieve membership details.')
+  }
+  const { membership } = membershipResponse
+
+  const [{ members }, { organization }] = await Promise.all([
     getMembers(currentOrg!),
     getOrganization(currentOrg!),
   ])
