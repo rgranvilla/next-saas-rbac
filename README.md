@@ -113,7 +113,7 @@ Como o projeto tem fins de estudo, contribuições para melhorias e correções 
 
 [![Ricardo Granvilla](./assets/author.png)](https://github.com/rgranvilla)
 
-[![Ricardo Granvilla 🚀](https://github.com/rgranvilla)](https://github.com/rgranvilla)
+[Ricardo Granvilla 🚀](https://github.com/rgranvilla)
 
 [![Twitter Badge](https://img.shields.io/badge/-@rgranvilla-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/rgranvilla)](https://twitter.com/rgranvilla)
 [![Linkedin Badge](https://img.shields.io/badge/-Ricardo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rgranvilla/)](https://www.linkedin.com/in/rgranvilla/)
